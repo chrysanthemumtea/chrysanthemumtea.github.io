@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+    
+    <entry>
+      <title><![CDATA[Ajax]]></title>
+      <url>%2F2016%2F10%2F08%2Fajax%2F</url>
+      <content type="text"><![CDATA[Ajax (Asynchronous javaScript and xml)是指一种创建交互式网页应用的网页开发技术第一步:请求初始化,以搜索内容为例--相当于打开浏览器; 第二步:建立服务器,相当于输入网址; 对象.open(&apos;参数1&apos;,&apos;参数2&apos;,参数3) 参数1:method请求方式 get/post 参数2:url 请求的地址 参数3:是否异步 true表示异步,false表示同步 第三步:发送请求; 对象.send(); 第四步:做出响应. 代码1234567891011121314151617181920212223$(function)&#123; //第一步 var xhr=null; if(XMLHttpRequest)&#123; xhr=new XMLHttpRequest(); &#125;else&#123; new ActiveXObject(&apos;Microsoft.XMLHTTP&apos;);//IE6兼容写法 &#125; //第二步 xhr.open(&apos;get&apos;,&apos;1.txt&apos;,true) //第三步 xhr.send(); //第四步 xhr.onreadystatechange=function()&#123; if(xhr.readyState===4)&#123; if(status===200)&#123;//html状态码 200表示成功 document.body.innerHTML+=&quot;&lt;h1&gt;&quot;+xhr.responseText+&quot;&lt;/h1&gt; &#125;else&#123; alert(&quot;出错了,ERR&quot;+xhr.status) &#125; &#125; &#125;&#125; 注释 当readState改变时触发事件readState: 0:请求未初始化 1:服务器已建立 2:请求接受 3:请求处理中 4:请求已处理,且响应已就绪(这个时候说明我们可以拿响应数据了)status HTML状态码: 200:代表成功 404:找不到 500:代表服务器出错了]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[用html写三角形]]></title>
+      <url>%2F2016%2F10%2F08%2Ftag%2F</url>
+      <content type="text"><![CDATA[css样式1234567891011&lt;style&gt;.triangle&#123; display:inline-block; width:0px; height:0px; border-width:30px 0 30px 30px; border-style:solid; border-color:transparent transparent transparent #ccc;/*透明 透明 透明 灰*/ margin-left:-8px;&#125;&lt;/style&gt; html中的布局123&lt;body&gt; &lt;div class=&quot;triangle&quot;&gt;&lt;/div&gt;&lt;/body&gt;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[from表单的笔记]]></title>
+      <url>%2F2016%2F10%2F05%2Fmy-from-book%2F</url>
+      <content type="text"><![CDATA[语义标签，对于搜索引擎更友好 &lt;header &gt;&lt;/header&gt;头部内容 &lt;footer &gt;&lt;/footer&gt;脚部内容 &lt;nav &gt;&lt;/nav&gt;导航 &lt;article &gt;&lt;/article&gt;文章 &lt;aside &gt;&lt;/aside&gt;侧边栏 &lt;section &gt;&lt;/section&gt;内容 &lt;mark &gt;&lt;/mark&gt;标记 &lt;video&gt;&lt;/video&gt;视频 &lt;audio&gt;&lt;/audio&gt;音频 &lt;canvas&gt;&lt;/canvas&gt;画布 &lt;svg&gt;&lt;/svg&gt;矢量绘图 离线冲突：FT中文可以去看缓存的东西 存储 localstorage sessionstorage block8 indexD8 表单的加强 多了很多验证 email text button tel data form表单 autofocus 自动获取焦点 required: 必填 autocomplete="on" 自动完成 email没有自动完成的功能 form="form的id" 即使写在form外的内容也是可以关联提交的 multiple 实现多选 placeholder 站位文字,颜色默认为浅灰 pattern="正则" 添加正则表达式,正则验证 &lt;input type="color"/&gt; 不兼容IE &lt;input type="data"/&gt; 不兼容火狐 IE 新版edge样式不同 &lt;input type="datetime"/&gt; 全部不兼容 &lt;input type="datetime-local"/&gt; 本地时间 火狐 IE不兼容 新版的edge的样式不同 &lt;input type="email"/&gt; email会添加基本的email格式验证 chrome支持并会提示格式错误的位置 火狐,IE支持但是不提示错误的位置 IE不兼容 &lt;input type="file" /&gt;file选择文件上传 全部支持 &lt;input type="hidden" id="" value=" " name="" /&gt; 隐藏域 &lt;input type="image" multiple=""/&gt; 看不出效果 multiple实现多选 &lt;input type="month" name="" id="" /&gt; 选择月份 不兼容火狐 IE 新版edge样式不同 &lt;input type="number" /&gt; number数字类型 chrome写不上汉子,会验证数字类型 移动端可以直接呼出数字键盘 IE写别的内容会自动删除 火狐 edge有验证 &lt;input type="range" max="100" min="1" steep="10" /&gt; 范围 最大100 最小1 &lt;input type="search" name="" value="搜索"/&gt; 搜索框 &lt;input type='tel' /&gt;电话 移动端可以直接呼出数字键盘 &lt;input type="time" /&gt; &lt;input type="url" /&gt;验证网址 主要检测http: IE10以上的支持 ff edge chrome支持 &lt;input type="week" /&gt; 星期]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[实现banner图的自动切换的代码]]></title>
+      <url>%2F2016%2F10%2F03%2Fmy-blog%2F</url>
+      <content type="text"><![CDATA[代码块css样式表12345678910111213141516171819202122232425&lt;style&gt;; body,ul,li&#123; list-style: none; margin:0; padding:0; &#125; .fl&#123; float: left; &#125; .banner-box&#123; width:100%; height:450px; overflow: hidden; position:relative; &#125; .banner-pic&#123; width:100%; &#125; .banner-pic li&#123; display:none; &#125; .banner-pic .active&#123; display:block; &#125;&lt;/style&gt; html中的布局&lt;div class="banner-box"&gt; &lt;ul class="banner-pic"&gt; &lt;li class="active"&gt; &lt;img src="img/banner1.jpg"/&gt; &lt;/li&gt; &lt;li class="active"&gt; &lt;img src="img/banner2.jpg"/&gt; &lt;/li&gt; &lt;li class="active"&gt; &lt;img src="img/banner3.jpg"/&gt; &lt;/li&gt; &lt;li class="active"&gt; &lt;img src="img/banner4.jpg"/&gt; &lt;/li&gt; &lt;li class="active"&gt; &lt;img src="img/banner5.jpg"/&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; javascript的代码 &lt;script type="text/javascript" src="js/jquery-1.12.4.js" &gt;&lt;/script &gt; &lt;script type="text/javascript" src="js/jquery.easing.1.3.js" &gt;&lt;/script &gt; &lt;script &gt; $(function(){ var $num=$('.banner-pic li').show().index(); var $len=$('.banner-pic').children().length; var $timer; $('.banner-box').on('mouseleave',function(){ $timer=setInterval(play,2000); }) $('.banner-box').on('mouseenter',function(){ clearInterval($timer); }) function play(){ $num++ if($num===$len){ $num=0; } $('.banner-pic li').eq($num).fadeIn(1000).siblings().fadeOut(1000) } }) &lt;/script &gt;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>%2F2016%2F09%2F27%2Fhello-world%2F</url>
+      <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    </entry>
+
+    
+  
+  
+</search>
